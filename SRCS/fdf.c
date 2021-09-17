@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:15:53 by ejahan            #+#    #+#             */
-/*   Updated: 2021/09/14 20:59:59 by ejahan           ###   ########.fr       */
+/*   Updated: 2021/09/17 05:36:14 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,12 @@ int	main(int ac, char **av)
 	int		screen_x;
 
 	screen_x = 0;
-	i = recup_map(av, &fdf);
-	if (i == -1)
-		return (1);
 	if (ac == 2)
+	{
+		i = recup_map(av, &fdf);
+		if (i == -1)
+			return (1);
 		window(&fdf);
+	}
 	return (0);
 }
