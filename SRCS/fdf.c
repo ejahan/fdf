@@ -17,10 +17,14 @@ int	ft_quit(t_fdf *fdf)
 	int	i;
 
 	i = 0;
-	mlx_destroy_image(fdf->mlx, fdf->img);
-	if (fdf->mlx_ptr)
-		mlx_destroy_window(fdf->mlx, fdf->mlx_ptr);
-	free(fdf->mlx);
+	if (fdf->mlx)
+	{
+		mlx_destroy_image(fdf->mlx, fdf->img);
+		if (fdf->mlx_ptr)
+			mlx_destroy_window(fdf->mlx, fdf->mlx_ptr);
+		mlx_destroy_display(fdf->mlx);
+		free(fdf->mlx);
+	}
 	while (i < fdf->line)
 	{
 		free(fdf->tab[i]);

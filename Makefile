@@ -23,7 +23,7 @@ OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
 
 CC			=	clang
 
-CFLAGS		=	-Wall -Werror -Wextra #-g3 -fsanitize=address
+CFLAGS		=	-Wall -Werror -Wextra -g3 #-fsanitize=address
 
 MLX_FLAG	=	-L./mlx_linux -lbsd -lmlx -lXext -lX11 -lm
 
